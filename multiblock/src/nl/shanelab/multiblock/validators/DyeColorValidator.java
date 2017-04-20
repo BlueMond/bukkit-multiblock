@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 
 import nl.shanelab.multiblock.IMaterialValidator;
+import org.bukkit.material.Wool;
 
 public class DyeColorValidator implements IMaterialValidator {
 	
@@ -28,6 +29,6 @@ public class DyeColorValidator implements IMaterialValidator {
 			return false;
 		}
 		
-		return DyeColor.getByData(block.getData()) == dyeColor; // ((Wool)block.getState().getData()).getColor() == dyeColor;
+		return ((Wool)block.getState().getData()).getColor() == dyeColor;
 	}
 }
